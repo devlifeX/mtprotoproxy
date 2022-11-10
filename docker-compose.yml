@@ -2,8 +2,10 @@ version: '2.0'
 services:
   mtprotoproxy:
     build: .
-    restart: unless-stopped
-    network_mode: "host"
+    restart: restart
+    ports:
+        - "443:443/tcp"
+        - "443:443/udp"
     volumes:
         - ./config.py:/home/tgproxy/config.py
         - ./mtprotoproxy.py:/home/tgproxy/mtprotoproxy.py
