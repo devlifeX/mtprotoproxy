@@ -2,7 +2,7 @@ version: '2.0'
 services:
   mtprotoproxy:
     build: .
-    restart: restart
+    restart: always
     ports:
         - "443:443/tcp"
         - "443:443/udp"
